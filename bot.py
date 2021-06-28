@@ -2,9 +2,9 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 #from telegram.ext import CommandHandler
 import sys
 import logging
+import auth
 
-with open('token.txt', 'r') as f:
-    TOKEN = f.readline().strip()
+TOKEN = auth.bot_auth()
 
 updater = Updater(token=TOKEN, use_context=True)
 dispatcher = updater.dispatcher
